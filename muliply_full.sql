@@ -1,0 +1,1 @@
+select row_num, col_num, sum(product) from (select A.row_num as row_num, B.col_num as col_num, A.value*B.value as product from (select * from A) A join (select * from B) B on A.col_num=B.row_num) group by row_num, col_num;
